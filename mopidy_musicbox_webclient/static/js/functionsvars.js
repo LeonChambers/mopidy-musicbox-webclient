@@ -216,15 +216,17 @@ function renderSongLi (previousTrack, track, nextTrack, uri, tlid, target, curre
 
     if (target === CURRENT_PLAYLIST_TABLE && typeof tlid === 'number' && tlid >= 0) {  // Current queue: Show popup menu icon. onClick plays track.
         tlidParameter = '\',\'' + tlid
-        onClick = 'return controls.playQueueTrack(' + tlid + ');'
+        onClick = 'return popupTracks(event, \'' + uri + '\', \'' + track.uri + tlidParameter + '\');';
+        // onClick = 'return controls.playQueueTrack(' + tlid + ');'
     } else {  // All other tracklist: Show default action icon. onClick performs default action
-        onClick = 'return controls.playTracks(\'\', mopidy, \'' + track.uri + '\', \'' + uri + '\');'
+        onClick = 'return popupTracks(event, \'' + uri + '\', \'' + track.uri + tlidParameter + '\');';
+        // onClick = 'return controls.playTracks(\'\', mopidy, \'' + track.uri + '\', \'' + uri + '\');'
     }
 
     html +=
         '<li class="song albumli" id="' + getjQueryID(target, track.uri) + '" tlid="' + tlid + '">' +
-        '<a href="#" class="moreBtn" onclick="return popupTracks(event, \'' + uri + '\',\'' + track.uri + tlidParameter + '\');">' +
-        '<i class="fa fa-play-circle-o"></i></a>' +
+        // '<a href="#" class="moreBtn" onclick="return popupTracks(event, \'' + uri + '\',\'' + track.uri + tlidParameter + '\');">' +
+        // '<i class="fa fa-play-circle-o"></i></a>' +
         '<a href="#" onclick="' + onClick + '"><h1><i class="' + getMediaClass(track.uri) + '"></i> ' + track.name + '</h1>'
 
     if (listLength === 1 || (!hasSameAlbum(previousTrack, track) && !hasSameAlbum(track, nextTrack))) {
