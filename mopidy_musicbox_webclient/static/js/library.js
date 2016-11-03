@@ -252,6 +252,7 @@
             $(PLAYLIST_TABLE).empty()
             library.togglePlaylists()
             var tracks = getPlaylistTracks(uri).then(function (tracks) {
+                $('#playlistsplayall').data('track', tracks[0].uri);
                 resultsToTables(tracks, PLAYLIST_TABLE, uri, 'return library.togglePlaylists();', true)
                 showLoading(false)
             })
@@ -262,6 +263,7 @@
                     $(this).addClass('playlistactive')
                 }
             })
+            $('#playlistsplayall').data('list', uri);
             return false
         },
 

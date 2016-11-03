@@ -244,6 +244,8 @@
                 $('#playlisttracksdiv').hide()
                 $('#playlistslistdiv').show()
             })
+            $('#playlistsplayall').removeData('list');
+            $('#playlistsplayall').removeData('track');
             return false
         },
 

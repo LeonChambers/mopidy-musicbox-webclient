@@ -306,6 +306,9 @@
             <h4>Playlists</h4>
         </div>
         <div align="right" class="ui-block-b" data-role="controlgroup" data-type="horizontal">
+            <button class="btn" type="button" title="Play all" id="playlistsplayall" onclick="controls.playTracks(PLAY_ALL, mopidy, $('#playlistsplayall').data('track'), $('#playlistsplayall').data('list'));">
+                <i class="fa fa-play"></i>
+            </button>
             <button class="btn" type="button" title="Refresh playlists" onclick="return controls.refreshPlaylists();">
                 <i class="fa fa-refresh"></i>
             </button>
