@@ -28,7 +28,8 @@
         // init search
         initSearch: function () {
             var value = $('#searchinput').val()
-            var searchService = $('#selectSearchService').val()
+            var searchService = 'all'
+            //var searchService = $('#selectSearchService').val()
             $.cookie('searchScheme', searchService, { expires: 365 })
 
             if ((value.length < 100) && (value.length > 0)) {
