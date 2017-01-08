@@ -124,10 +124,10 @@
 <div data-role="popup" data-transition="none" data-theme="b" id="popupTracks">
     <div data-role="collapsible-set">
         <ul data-role="listview" data-icon="false" id="popupTracksLv">
-            <!--<li data-icon="play">
+            <li data-icon="play">
                 <a href="#" onclick="return controls.playTracks(PLAY_NOW, mopidy);">Play <span class="popupTrackName"></span></a>
             </li>
-            <li data-icon="playAll" data-iconshadow="false">
+            <!--<li data-icon="playAll" data-iconshadow="false">
                 <a href="#" onclick="return controls.playTracks(PLAY_ALL, mopidy);">Play All</a>
             </li> -->
             <li data-icon="playNext" class="addqueue">
@@ -368,8 +368,15 @@
 
     <h3 id="h_albumname"></h3>
     <h5 id="h_albumartist"></h5>
+    <div align="left" data-role="controlgroup" data-type="horizontal">
+        <button class="btn" type="button" title="Play all" id="albumplayall" onclick="controls.playAlbum(PLAY_ALL, mopidy, $('#albumstable').attr('data'));">
+            <i class="fa fa-play"></i>
+        </button>
+        <button class="btn" type="button" title="Add All to Bottom of Queue" id="albumaddallbottom" onclick="controls.playAlbum(ADD_ALL_BOTTOM, mopidy, $('#albumstable').attr('data'));">
+            <i class="fa fa-plus-square-o"></i>
+        </button>
+    </div>
     <ul class="table" id="albumstable"></ul>
-
 </div>
 
 <div data-role="content" class="pane" id="artistspane">

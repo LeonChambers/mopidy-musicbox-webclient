@@ -111,6 +111,12 @@
             return action
         },
 
+        /* Plays an album starting with the first track */
+        playAlbum: function (action, mopidy, playlistUri) {
+            var trackUri = getTracksFromUri(playlistUri, false)[0];
+            this.playTracks(action, mopidy, trackUri, playlistUri);
+        },
+
         /* Retrieves the Font Awesome character for the given action. */
         getIconForAction: function (action) {
             action = controls.getAction(action)
