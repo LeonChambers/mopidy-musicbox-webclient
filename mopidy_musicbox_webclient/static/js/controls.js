@@ -654,7 +654,6 @@
                 window.history.back()
             }, 10000)
         }
-
     }
     return controls
 }))

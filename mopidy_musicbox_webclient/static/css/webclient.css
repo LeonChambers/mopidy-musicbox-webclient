@@ -160,6 +160,20 @@
     display: inline;
 }
 
+div.hostInfo {
+    width: 100%;
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+span.hostInfo {
+    font-weight: normal;
+    font-size: 0.75em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
 /********************
  *  Pages, content  *
  ********************/
